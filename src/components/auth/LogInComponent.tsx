@@ -23,7 +23,7 @@ const validationSchema = Yup.object({
 });
 
 export const LogInComponent: React.FC<LoginProps> = ({ setIsLoggedIn, setUsername }) => {
-    const [messageApi, contextHolder] = message.useMessage();
+    const [_messageApi, contextHolder] = message.useMessage();
     const [show, setShow] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
 

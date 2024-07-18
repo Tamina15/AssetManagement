@@ -18,6 +18,7 @@ export const logout = async () => {
 }
 export const changePassword = async (pswdData: ChangePasswordModel) => {
     message.loading({ content: 'Changing Password...', key: 'changePassword' });
-    await axios.patch(`${AZURE_SERVICE_API}/users/password`, pswdData, CORS_CONFIG);
-    message.destroy('changePassword')
+    const response = await axios.patch(`${AZURE_SERVICE_API}/users/password`, pswdData, CORS_CONFIG);
+    message.destroy('changePassword');
+    return response
 };
